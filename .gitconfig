@@ -1,0 +1,60 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = Jibidus
+	email = jibidus@gmail.com
+[alias]
+	ec = config --global -e
+	st = status
+	pushf = push --force-with-lease
+	amend = commit --amend
+	oneline = log --pretty=oneline --abbrev-commit --graph
+	logf = log --name-only --oneline
+	undo = reset --soft HEAD^
+	continue = rebase --continue
+	aac = !git add . && git rebase --continue
+	up = !git pull --rebase $@
+	upmaster = !git com && git up && git co -
+	prune = "!f() { git remote prune origin; }; f"
+	stashow = stash show -u
+	stashp = stash save -p --no-keep-index
+	stashpop = stash pop --index
+	co = checkout
+	cob = checkout -b
+	com = checkout master
+	cm = !git add -A && git commit -m
+	wip = !git add -A && git commit -m 'WIP'
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -n 1 git branch -d; git remote update origin --prune; }; f"
+	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+	mad = !BRANCH=${1-$(git symbolic-ref --short HEAD)} && git checkout $BRANCH && git rebase ${2-master} && git checkout ${2-master} && git merge --no-ff $BRANCH && git branch -d $BRANCH
+	squash = "!f() { git rebase -i --autosquash ${1-master}; }; f"
+	fixup = "!f() { COMMIT=${1-$(git suggest-fixup-commit)} && echo Fixup to $COMMIT... && git commit --fixup $COMMIT; }; f"
+	unadd = reset HEAD
+	rename = !old_branch=$(git symbolic-ref --short HEAD) && git branch -m $1 && git push origin --set-upstream $1 && git push origin :$old_branch
+	sfc = !git status -s --untracked-files=no --porcelain |grep ^[MDR] |cut -c 4- |cut -d ' ' -f 1 |xargs -L1 git log --oneline --abbrev-commit -n 1 --follow -- 
+	suggest-fixup-commit = !git status -s --untracked-files=no --porcelain |grep ^[MDR] |cut -c 4- |cut -d ' ' -f 1 |xargs -L1 git log --pretty=format:%h -n 1 --follow -- 
+	pushremote = push -u origin HEAD
+        pr = !git pushremote && hub pull-request
+	delete = "!f() { git branch -D $1 && git fetch && git push origin :$1; }; f"
+[push]
+	default = simple
+[core]
+	excludesfile = /Users/Jibidus/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[color]
+	ui = auto
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f

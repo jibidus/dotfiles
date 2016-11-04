@@ -1,45 +1,29 @@
 # Dotfiles
 
-**WARNING** Under development
+[Dotfiles](https://en.wikipedia.org/wiki/Dot-file) allow you to customize your computer through aliases, configuration, parameters ...
+Here are my personal dotfiles dedicated to OSX for development purpose.
 
-Dotfiles dedicated to:
-- Automate Homebrew upgrade
-- Automate Homebrew cask formula
-- Software Bootstrapping
+This repository contains (for now):
+- git config
 
-# Bootstrapping
-- Install Homebrew
-```
-TO COMPLETE
-```
+# Why a repository for that?
 
-- Install git
-```
-brew install git
-```
+With a git repository, I can backup, tag, track modifications ...
+More over, this repository is public which can perhaps help someone when trying to do something similar.
 
-- Create git ssh key
-```
-TO COMPLETE
-```
+# How to install?
 
-- Clone this repository
-```
-cd ~
-git clone git@github.com:jibidus/dotiles.git
-```
+- Prerequisites
+  * Git (with [Homebrew](http://brew.sh))
 
-- Run bootstraping script
-```
-~/dotfile/bootstrap.sh
-```
+  * Clone this repository
+  ```
+  $ mkdir ~/Development
+  $ cd ~/Development
+  $ git clone git@github.com:jibidus/dotfiles.git
+  ```
 
-# TODO
-- [ ] Merge with git-config
-- [ ] Split bootstrapping by install procedure
-- [x] Bootstrap installation procedure
-- [ ] Schedule homebrew upgrade
-  * brew upgrade
-  * brew-cask.sh upgrade
-- [ ] Ruby upgrade
-  * Upgrade rbenv ruby versions lists : cd .rbenv/plugins/ruby-build && git pull
+- Git-config
+```
+$ ln -s ~/Development/dotfiles/.gitconfig ~/.gitconfig
+```
