@@ -38,6 +38,7 @@
 	pushremote = push -u origin HEAD
         pr = !git pushremote && hub pull-request
 	delete = "!f() { git branch -D $1 && git fetch && git push origin :$1; }; f"
+	log-files-only = log --name-status
 [push]
 	default = simple
 [core]
