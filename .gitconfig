@@ -17,6 +17,7 @@
 	aac = !git add . && git rebase --continue
 	up = !git pull --rebase $@
 	upmaster = !git com && git up && git co -
+	updev = !git co dev && git up && git co -
 	prune = "!f() { git remote prune origin; }; f"
 	stashow = stash show -u
 	stashp = stash save -p --no-keep-index
@@ -24,6 +25,7 @@
 	co = checkout
 	cob = checkout -b
 	com = checkout master
+	codev = checkout dev
 	cm = !git add -A && git commit -m
 	wip = !git add -A && git commit -m 'WIP'
 	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -n 1 git branch -d; git remote update origin --prune; }; f"
