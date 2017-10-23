@@ -28,8 +28,7 @@
 	codev = checkout dev
 	cm = !git add -A && git commit -m
 	wip = !git add -A && git commit -m 'WIP'
-	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -n 1 git branch -d; git remote update origin --prune; }; f"
-	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+	bcleanv = !git fetch && git branch -vv | grep \\\\[.*: gone\\\\] | cut -d ' ' -f 3 | xargs -L1 echo
 	mad = !BRANCH=${1-$(git symbolic-ref --short HEAD)} && git checkout $BRANCH && git rebase ${2-master} && git checkout ${2-master} && git merge --no-ff $BRANCH && git branch -d $BRANCH
 	squash = "!f() { git rebase -i --autosquash ${1-master}; }; f"
 	fixup = "!f() { COMMIT=${1-$(git suggest-fixup-commit)} && echo Fixup to $COMMIT... && git commit --fixup $COMMIT; }; f"
