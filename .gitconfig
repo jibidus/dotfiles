@@ -41,6 +41,9 @@
         pr = !git pushremote && hub pull-request
 	delete = "!f() { git branch -D $1 && git fetch && git push origin :$1; }; f"
 	log-files-only = log --name-status
+	copr = "!f() { git fetch origin refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pushgerrit = push origin HEAD:refs/for/master
+	pushgerritprivate = push origin HEAD:refs/for/master%private
 [push]
 	default = simple
 [core]
