@@ -70,3 +70,5 @@
 	showUntrackedFiles = all
 [branch]
 	autosetuprebase = always
+[pull]
+	rebase = true
