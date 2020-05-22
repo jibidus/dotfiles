@@ -7,17 +7,19 @@
 	email = jibidus@gmail.com
 [alias]
 	ec = config --global -e
-	st = status
+	st = status --short --branch
 	pushf = push --force-with-lease
 	amend = commit --amend
 	oneline = log --pretty=oneline --abbrev-commit --graph
 	logf = log --name-only --oneline
+	logg = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
 	undo = reset --soft HEAD^
 	continue = rebase --continue
 	aac = !git add . && git rebase --continue
 	up = !git pull --rebase $@
 	upmaster = !git com && git up && git co -
 	updev = !git co dev && git up && git co -
+	upsyncd = !git co feature/syncd && git up && git co -
 	prune = "!f() { git remote prune origin; }; f"
 	stashow = stash show -u
 	stashp = stash save -p --no-keep-index
