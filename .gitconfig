@@ -51,6 +51,7 @@
 	default = simple
 [core]
 	excludesfile = /Users/Jibidus/.gitignore_global
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
