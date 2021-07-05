@@ -18,6 +18,7 @@
 	aac = !git add . && git rebase --continue
 	up = !git pull --rebase $@
 	upmaster = !git com && git up && git co -
+	upmain = !git co main && git up && git co -
 	updev = !git co dev && git up && git co -
 	upnext = !git co next && git up && git co -
 	upsyncd = !git co feature/syncd && git up && git co -
