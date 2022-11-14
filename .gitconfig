@@ -51,7 +51,7 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/Jibidus/.gitignore_global
+	excludesFile = ~/.gitignore
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
