@@ -53,6 +53,7 @@
 [core]
 	excludesFile = ~/.gitignore
 	editor = vim
+	hooksPath = /Users/jbmille/.githooks
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
