@@ -5,6 +5,7 @@ Here are my personal dotfiles dedicated to OSX for development purpose.
 
 This repository contains (for now):
 - git config
+- vim config
 
 # Why a repository for that?
 
@@ -23,7 +24,12 @@ More over, this repository is public which can perhaps help someone when trying 
   $ git clone git@github.com:jibidus/dotfiles.git
   ```
 
-- Git-config
+- Git config
 ```
 $ ln -s ~/Development/dotfiles/.gitconfig ~/.gitconfig
 ```
+
+- Vim config
+```
+$ ln -s ~/Development/dotfiles/vimrc ~/.vim/vimrc
+``` 
