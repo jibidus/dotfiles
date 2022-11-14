@@ -3,8 +3,8 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [user]
-	name = Jibidus
-	email = jibidus@gmail.com
+	name = Jean-Baptiste Mille
+	email = jean-baptiste.mille@aselta.com
 [alias]
 	ec = config --global -e
 	st = status --short --branch

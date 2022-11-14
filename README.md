@@ -1,35 +1,17 @@
 # Dotfiles
 
 [Dotfiles](https://en.wikipedia.org/wiki/Dot-file) allow you to customize your computer through aliases, configuration, parameters ...
-Here are my personal dotfiles dedicated to OSX for development purpose.
-
-This repository contains (for now):
-- git config
-- vim config
+Here are my personal dotfiles dedicated to macOS for development purpose,
+maintained through [chezmoi](https://www.chezmoi.io).
 
 # Why a repository for that?
 
 With a git repository, I can backup, tag, track modifications ...
 More over, this repository is public which can perhaps help someone when trying to do something similar.
 
-# How to install?
+# How to install on a new machine?
 
-- Prerequisites
-  * Git (with [Homebrew](http://brew.sh))
-
-  * Clone this repository
-  ```
-  $ mkdir ~/Development
-  $ cd ~/Development
-  $ git clone git@github.com:jibidus/dotfiles.git
-  ```
-
-- Git config
+```bash
+brew install chezmoi
+chezmoi init --apply jibidus
 ```
-$ ln -s ~/Development/dotfiles/.gitconfig ~/.gitconfig
-```
-
-- Vim config
-```
-$ ln -s ~/Development/dotfiles/vimrc ~/.vim/vimrc
-``` 
