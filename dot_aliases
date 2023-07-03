@@ -1,1 +1,2 @@
 alias giti=git
+alias spotless="mvn spotless:apply -pl '!:aselta-core-superpom'"
