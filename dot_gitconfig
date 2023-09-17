@@ -51,7 +51,7 @@
 [push]
 	default = simple
 [core]
-	excludesFile = ~/.gitignore
+	excludesFile = /Users/jbmille/.gitignore
 	editor = vim
 	hooksPath = /Users/jbmille/.githooks
 	autocrlf = input
