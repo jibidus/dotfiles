@@ -3,8 +3,8 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [user]
-	name = Jean-Baptiste Mille
-	email = jean-baptiste.mille@aselta.com
+	name = Jibidus
+	email = jibidus@gmail.com
 [alias]
 	ec = config --global -e
 	st = status --short --branch
@@ -81,3 +81,6 @@
 	rebase = true
 [rerere]
 	enabled = true
+
+[includeIf "gitdir:~/Development/aselta/"]
+  path = .gitconfig-aselta
