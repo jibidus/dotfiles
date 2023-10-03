@@ -51,9 +51,9 @@
 [push]
 	default = simple
 [core]
-	excludesFile = /Users/jbmille/.gitignore
+	excludesFile = ~/.gitignore
 	editor = vim
-	hooksPath = /Users/jbmille/.githooks
+	hooksPath = ~/.githooks
 	autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
