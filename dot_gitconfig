@@ -82,5 +82,5 @@
 [rerere]
 	enabled = true
 
-[includeIf "gitdir:~/Development/aselta/"]
-  path = .gitconfig-aselta
+[includeIf "gitdir:/Users/jibidus/dev/netceler/"]
+  path = /Users/jibidus/dev/netceler/.gitconfig
