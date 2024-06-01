@@ -1,3 +1,4 @@
 alias giti=git
 alias spotless="mvn spotless:apply -pl '!:aselta-core-superpom'"
 alias spot="mvn spotless:apply"
+alias copernic="ftp freebox@mafreebox.free.fr"
