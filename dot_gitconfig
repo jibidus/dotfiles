@@ -5,6 +5,7 @@
 [user]
 	name = Jibidus
 	email = jibidus@gmail.com
+	signingkey = 1516E7184E4BB335
 [alias]
 	ec = config --global -e
 	st = status --short --branch
@@ -84,3 +85,5 @@
 
 [includeIf "gitdir:/Users/jibidus/dev/netceler/"]
   path = /Users/jibidus/dev/netceler/.gitconfig
+[commit]
+	gpgsign = true
