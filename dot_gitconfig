@@ -87,3 +87,6 @@
   path = /Users/jibidus/dev/netceler/.gitconfig
 [commit]
 	gpgsign = true
+[fetch]
+	prune = true
+	pruneTags = true
