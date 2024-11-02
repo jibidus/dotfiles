@@ -49,6 +49,7 @@
 	copr = "!f() { git fetch origin refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	pushgerrit = push origin HEAD:refs/for/master
 	pushgerritprivate = push origin HEAD:refs/for/master%private
+	branch-old = !git for-each-ref --sort=committerdate --format='%(authorname) %09 %(committerdate:relative) %09 %(refname)' refs/remotes | sort
 [push]
 	default = simple
 [core]
