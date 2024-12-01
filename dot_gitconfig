@@ -34,7 +34,7 @@
 	cm = !git add -A && git commit -m
 	wip = !git add -A && git commit -m 'WIP'
 	# (Branch CLEAN) Remove local branches removed remotely
-	bclean = "!f() { git fetch --prune && git branch -vv | grep '\\[.*: gone\\]' | cut -d ' ' -f 3 | xargs -L1 git branch -D; }; f"
+	bclean = "!f() { git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads/ | grep '\\[gone\\]$' |  cut -d ' ' -f 1 | xargs -L1 git branch -D; }; f"
 	mad = !BRANCH=${1-$(git symbolic-ref --short HEAD)} && git checkout $BRANCH && git rebase ${2-master} && git checkout ${2-master} && git merge --no-ff $BRANCH && git branch -d $BRANCH
 	squash = "!f() { git rebase -i --autosquash ${1-master}; }; f"
 	fixup = "!f() { COMMIT=${1-$(git suggest-fixup-commit)} && echo Fixup to $COMMIT... && git commit --fixup $COMMIT; }; f"
