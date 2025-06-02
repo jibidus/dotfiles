@@ -2,4 +2,4 @@ alias giti=git
 alias spotless="mvn spotless:apply -pl '!:aselta-core-superpom'"
 alias spot="mvn spotless:apply"
 alias copernic="ftp freebox@mafreebox.free.fr"
-alias dl='f() { yt-dlp --cookies-from-browser safari --format "bestvideo[ext=mp4][height<=720]+bestaudio[ext=m4a]" --no-playlist --sponsorblock-remove default "$1" };f'
+alias dl='f() { yt-dlp --cookies-from-browser safari --format "bestvideo[ext=mp4][height<=720]+bestaudio[ext=m4a]" --no-playlist --sponsorblock-remove default "$1" && say "Téléchargement terminé" };f'
